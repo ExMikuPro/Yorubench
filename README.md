@@ -34,6 +34,7 @@ It is not meant to be a full test framework. Its job is to provide a small and d
 - supports `DWT cycle`
 - supports result struct output
 - supports text writer callback
+- can optionally reuse Yorulog as the internal output path
 
 ---
 
@@ -61,6 +62,32 @@ YORUBENCH_EnableDwtCycles(&hBench, SystemCoreClock);
 YORUBENCH_Begin(&hBench);
 /* code under test */
 YORUBENCH_End(&hBench, &result, "demo", 1u, 0u);
+```
+
+### Using Yorulog as the Output Path
+
+```c
+#define YORUBENCH_USE_YORULOG 1
+#include "yorubench.h"
+
+YORUBENCH_Init(&hBench);
+YORUBENCH_UseTim(&hBench, &htim2, 1000000u);
+YORUBENCH_EnableDwtCycles(&hBench, SystemCoreClock);
+
+YORUBENCH_Begin(&hBench);
+/* code under test */
+YORUBENCH_End(&hBench, &result, "demo", 1u, 0u);
+YORUBENCH_Report(&hBench, &result);
+```
+
+### Using an External Writer Callback
+
+```c
+#define YORUBENCH_USE_YORULOG 0
+#include "yorubench.h"
+
+YORUBENCH_Init(&hBench);
+YORUBENCH_SetWriter(&hBench, my_writer, my_user);
 ```
 
 ---

@@ -34,6 +34,7 @@ Yorubench 是一个面向 **STM32 HAL** 的轻量级性能测量库。
 - 支持 `DWT cycle`
 - 支持结果结构体输出
 - 支持文本输出回调
+- 可选内部复用 Yorulog 作为输出路径
 
 ---
 
@@ -61,6 +62,32 @@ YORUBENCH_EnableDwtCycles(&hBench, SystemCoreClock);
 YORUBENCH_Begin(&hBench);
 /* code under test */
 YORUBENCH_End(&hBench, &result, "demo", 1u, 0u);
+```
+
+### 使用 Yorulog 作为输出
+
+```c
+#define YORUBENCH_USE_YORULOG 1
+#include "yorubench.h"
+
+YORUBENCH_Init(&hBench);
+YORUBENCH_UseTim(&hBench, &htim2, 1000000u);
+YORUBENCH_EnableDwtCycles(&hBench, SystemCoreClock);
+
+YORUBENCH_Begin(&hBench);
+/* code under test */
+YORUBENCH_End(&hBench, &result, "demo", 1u, 0u);
+YORUBENCH_Report(&hBench, &result);
+```
+
+### 使用外部输出回调
+
+```c
+#define YORUBENCH_USE_YORULOG 0
+#include "yorubench.h"
+
+YORUBENCH_Init(&hBench);
+YORUBENCH_SetWriter(&hBench, my_writer, my_user);
 ```
 
 ---
