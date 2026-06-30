@@ -19,7 +19,7 @@ Yorubench 是一个面向 **STM32 HAL** 的轻量级性能测量库。
 > | --- | --- |
 > | [Yorulog](https://github.com/ExMikuPro/Yorulog) | 轻量级 UART 日志库 |
 > | [Yorush](https://github.com/ExMikuPro/Yorush) | 轻量级 UART Shell / 命令解析器 |
-> | [Yorunvm](https://github.com/ExMikuPro/Yorunvm) | STM32 片上 NVM / Flash 访问辅助库 |
+> | [Yorunvm](https://github.com/ExMikuPro/Yorunvm) | STM32 片上 NVM / Flash / EEPROM 访问辅助库 |
 > | [Yorukv](https://github.com/ExMikuPro/Yorukv) | 轻量级 KV 配置库 |
 > | [Yorubench](https://github.com/ExMikuPro/Yorubench) | 轻量级性能测量库 |
 > | [Yoruassert](https://github.com/ExMikuPro/Yoruassert.git) | 轻量级断言辅助库 |
