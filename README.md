@@ -19,6 +19,7 @@ It is not meant to be a full test framework. Its job is to provide a small and d
 > | --- | --- |
 > | [Yorulog](https://github.com/ExMikuPro/Yorulog) | Lightweight UART logger |
 > | [Yorush](https://github.com/ExMikuPro/Yorush) | Lightweight UART shell / command parser |
+> | [Yorulink](https://github.com/ExMikuPro/Yorulink) | Lightweight MCU-to-MCU binary communication library |
 > | [Yorunvm](https://github.com/ExMikuPro/Yorunvm) | STM32 on-chip NVM / Flash / EEPROM access helper |
 > | [Yorukv](https://github.com/ExMikuPro/Yorukv) | Lightweight KV configuration library |
 > | [Yorubench](https://github.com/ExMikuPro/Yorubench) | Lightweight performance measurement library |
